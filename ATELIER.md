@@ -1,5 +1,8 @@
 ### Ateliers
 
+
+### Partie 1 : Les Filtres
+
 # Récupérer 100 utilisateurs à la création de l'instance VueJS avec Vue-Ressource
 https://randomuser.me/api/?results=100&nat=fr
 
@@ -10,3 +13,6 @@ https://randomuser.me/api/?results=100&nat=fr
 # Créer un filtre sur la ville ou le citycode 
 # Créer un filtre sur le pseudo
 # Créer un filtre qui affiche l'age selon le dob (on pourra utiliser v-html) 
+
+
+### Partie 2 : Les Composants avec Vue-CLI

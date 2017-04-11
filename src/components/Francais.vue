@@ -1,6 +1,7 @@
 <template>
   <div class="liste">
-    <h3>Recherche ton ami parmis  [{{ filterByWord.length }}] amis</h3>
+    
+    <h3><img src="https://www.infogreffe.fr/societes-theme/images/infogreffe/icons/french_flag_50x50.png" /> Recherche ton ami parmis les amis français  ({{ filterByWord.length }})</h3>
     <formSearch @changed="search = $event"></formSearch>
     <a @click="refresh" class="pull-right"><i class="fa fa-refresh" aria-hidden="true"></i></a>
     <div v-if="search.length >= 3">Rechercher dans : {{ search }}</div>
@@ -11,7 +12,7 @@
 
     <item @remove="trash($event)" v-for="personnage in filterByWord" :perso="personnage" v-bind:key="personnage.id"></item>
 
-    <button @click="more" id="more" type="button" class="btn btn-md btn-primary">Voir 10 autres de personnages</button>
+    <button @click="more" id="more" type="button" class="btn btn-md btn-primary">Voir 10 autres français de personnages</button>
   </div>
 </template>
 
@@ -48,14 +49,14 @@ export default {
     },
     refresh: function(){ 
         let self = this;
-        let url="https://randomuser.me/api/?results=10";
+        let url="https://randomuser.me/api/?results=10&nat=fr";
         this.$http.get(url).then(function(reponse){
           self.personnages = reponse.body.results; // body: corps de ma réponse
         });
     },
     more: function(){
         let self = this;
-        let url="https://randomuser.me/api/?results=10";
+        let url="https://randomuser.me/api/?results=10&nat=fr";
         this.$http.get(url).then(function(reponse){
           self.personnages = self.personnages.concat(reponse.body.results); // body: corps de ma réponse
         });
@@ -67,7 +68,7 @@ export default {
   },
   created(){
     let self = this;
-    let url="https://randomuser.me/api/?results=10";
+    let url="https://randomuser.me/api/?results=10&nat=fr";
 		this.$http.get(url).then(function(reponse){
 			self.personnages = reponse.body.results; // body: corps de ma réponse
 		});

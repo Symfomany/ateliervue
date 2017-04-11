@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Liste from '@/components/Liste'
+import Francais from '@/components/Francais'
 
-import VueResource from 'vue-resource'
-Vue.use(VueResource);
+
 
 
 Vue.use(Router)
@@ -14,6 +14,11 @@ export default new Router({
       path: '/',
       name: 'Liste',
       component: Liste
+    },
+    {
+      path: '/francais',
+      name: 'Francais',
+      component: Francais
     }
   ]
 })
